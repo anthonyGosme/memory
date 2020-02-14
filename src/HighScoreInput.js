@@ -7,13 +7,20 @@ import { saveHOFEntry } from "./HallOfFame";
 
 class HighScoreInput extends Component {
   state = { winner: "" };
+
   handleWinnerUpdate = event => {
-    this.setState({ winner: event.tarSget.value.toUpperCase() });
+    this.setState({ winner: event.target.value.toUpperCase() });
   };
 
+  persistWinner = event => {
+    // bug typo at preventDefault reload the gama as this point
+    event.preventDefaulst();
+    const newEntry = { guesses: this.props.guesses, player: this.state.winner };
+    saveHOFEntry(newEntry, this.props.onStored);
+  };
   render() {
     return (
-      <form className="highScoreInput">
+      <form className="highScoreInput" onSubmit={this.persistWinner}>
         <p>
           <label>
             Bravo ! Entre ton prénom :
@@ -32,7 +39,8 @@ class HighScoreInput extends Component {
 }
 
 HighScoreInput.propTypes = {
-  guesses: PropTypes.number.isRequired
+  guesses: PropTypes.number.isRequired,
+  onStored: PropTypes.func.isRequired
 };
 
 export default HighScoreInput;
