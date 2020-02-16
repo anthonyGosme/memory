@@ -6,7 +6,7 @@ import HighScoreInput from "./HighScoreInput";
 import Card from "./Card";
 import GuessCount from "./GuessCount";
 import HallOfFame from "./HallOfFame";
-const SIDE = 2;
+const SIDE = 6;
 const SYMBOLS = "😀🎉💖🎩🐶🐱🦄🐬🌍🌛🌞💫🍎🍌🍓🍐🍟🍿";
 const VISUAL_PAUSE_MSECS = 750;
 

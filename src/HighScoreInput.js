@@ -13,8 +13,10 @@ class HighScoreInput extends Component {
   };
 
   persistWinner = event => {
+
     // bug typo at preventDefault reload the gama as this point
-    event.preventDefaulst();
+    event.preventDefault();
+
     const newEntry = { guesses: this.props.guesses, player: this.state.winner };
     saveHOFEntry(newEntry, this.props.onStored);
   };
@@ -28,7 +30,7 @@ class HighScoreInput extends Component {
               type="text"
               autoComplete="given-name"
               onChange={this.handleWinnerUpdate}
-              value={this.state.winner}
+              value={this.state.winner} // controle un champe vs defaultValue sans controle du champs (pour jquery , ..)
             />
           </label>
           <button type="submit">J’ai gagné !</button>
