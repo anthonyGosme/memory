@@ -7,7 +7,7 @@ import Card from "./Card";
 import GuessCount from "./GuessCount";
 import HallOfFame from "./HallOfFame";
 const SIDE = 6;
-const SYMBOLS = "😀🎉💖🎩🐶🐱🦄🐬🌍🌛🌞💫🍎🍌🍓🍐🍟🍿";
+export const SYMBOLS = "😀🎉💖🎩🐶🐱🦄🐬🌍🌛🌞💫🍎🍌🍓🍐🍟🍿";
 const VISUAL_PAUSE_MSECS = 750;
 
 class App extends Component {
